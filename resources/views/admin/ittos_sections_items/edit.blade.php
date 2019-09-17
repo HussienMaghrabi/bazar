@@ -1,0 +1,15 @@
+@extends('admin.layout.forms.edit.index')
+@section('action' , "ittos_sections_items/$item->id")
+@section('title' , trans('language.edit'))
+@section('page-title',trans('language.edit'))
+@section('form-groups')
+
+    @includeIf('admin.components.form.edit.file', ['icon' => 'fa fa-check','label' => trans('language.image'),'name'=>'image', 'max'=>'2'])
+    @includeIf('admin.components.form.edit.text', ['icon' => 'fa fa-user','label' => trans('language.name_ar'),'name'=>'name_ar', 'placeholder'=>trans('language.name_ar')])
+    @includeIf('admin.components.form.edit.text', ['icon' => 'fa fa-user','label' => trans('language.name_en'),'name'=>'name_en', 'placeholder'=>trans('language.name_en')])
+    @includeIf('admin.components.form.edit.text', ['icon' => 'fa fa-user','label' => trans('language.description_ar'),'name'=>'description_ar', 'placeholder'=>trans('language.description_ar')])
+    @includeIf('admin.components.form.edit.text', ['icon' => 'fa fa-user','label' => trans('language.description_en'),'name'=>'description_en', 'placeholder'=>trans('language.description_en')])
+    @includeIf('admin.components.form.edit.select', ['label' => trans("language.ittos_sections"),'name'=>'itto_section_id', 'items'=> \App\Itto_sections::all() , 'icon' => 'fa fa-list',])
+    @includeIf('admin.components.form.edit.select', ['label' => trans("language.language.ittos_sections_types"),'name'=>'section_type_id', 'items'=> \App\Itto_sections_type::all() , 'icon' => 'fa fa-list',])
+@endsection
+@section('submit-button-title' , "Edit itto")
