@@ -32,8 +32,26 @@ class User extends Authenticatable
         'user_type_id',
         'userVerify',
         'social_id',
-        'country_id'
+        'country_id',
+        'balance',
+        'adv_limit',
     ];
+
+    public function getServBalanceAttribute()
+    {
+        $attribute = "";
+        if ($this->balance)
+            $attribute = $this->balance;
+        return $attribute;
+    }
+
+    public function getServAdvLimitAttribute()
+    {
+        $attribute = "";
+        if ($this->adv_limit)
+            $attribute = $this->adv_limit;
+        return $attribute;
+    }
 
     public function scopeUserType($query)
     {

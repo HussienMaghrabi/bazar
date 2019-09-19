@@ -17,18 +17,6 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function setUpFirebase()
-    {
-        $json = $this->fireBaseConnectionJson();
-        $serviceAccount = ServiceAccount::fromJson($json);
-        $firebase = (new Factory)
-            ->withServiceAccount($serviceAccount)
-            ->withDatabaseUri('https://pmpro-23181.firebaseio.com')
-            ->create();
-        $database = $firebase->getDatabase();
-        return $database;
-    }
-
     public function fireBaseNotificationsHandler($tokens, $data = [])
     {
         $optionBuilder = new OptionsBuilder();

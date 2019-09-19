@@ -32,6 +32,8 @@ class CreateUsersTable extends Migration
             $table->string('userVerify')->default(\App\ModulesConst\UserVerify::no);
             $table->string('social_id')->nullable();
             $table->string('country_id')->nullable();
+            $table->string('balance')->default("0");
+            $table->string('adv_limit')->default("0");
             $table->rememberToken();
             $table->timestamps();
         });

@@ -16,4 +16,16 @@ Route::post('/terms','Terms\indexController@index');
 Route::post('/about-us','About\indexController@index');
 Route::post('/contact-us','ContactUs\indexController@index');
 
+Route::post('/countries','Country\indexController@index');
+Route::post('/cities','City\indexController@index');
+
+Route::post('/categories','Category\IndexController@index');
+Route::post('/sub-categories','SubCategory\IndexController@index');
+
+Route::post('/Country_advertisements','Advertisement\IndexController@Country_advertisements');
+Route::post('/City_advertisements','Advertisement\IndexController@City_advertisements');
+Route::post('/single_advertisement','Advertisement\IndexController@single_advertisement');
+
+
+
 

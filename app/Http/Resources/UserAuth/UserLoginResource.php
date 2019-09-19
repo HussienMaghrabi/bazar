@@ -22,6 +22,10 @@ class UserLoginResource extends JsonResource
            'email' => $this->email,
            'api_token' => $this->api_token,
            'fire_base_token' => $this->fire_base_token,
+           'balance' => $this->serv_balance,
+           'adv_limit' => $this->serv_adv_limit,
        ];
     }
 }
+
+
