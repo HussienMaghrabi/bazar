@@ -14,7 +14,7 @@ class IndexController extends Controller
 
     public function index(Request $request)
     {
-        $termeApp = Terms::first();
+        $termeApp = Terms::where('id',1)->get();
         return $this->apiResponse($request, trans('language.message'), $termeApp, true);
 
     }
