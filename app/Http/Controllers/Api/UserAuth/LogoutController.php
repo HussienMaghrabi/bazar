@@ -16,7 +16,6 @@ class LogoutController extends Controller
         if ($user)
         {
             $user->fire_base_token = null;
-            $user->online =  UserOnlineStatus::offline;
             $user->save();
         }
         return $this->apiResponse($request, trans('language.message'), null, true);

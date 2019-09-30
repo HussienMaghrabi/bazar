@@ -96,6 +96,14 @@ class User extends Authenticatable
         return $attribute;
     }
 
+    public function getServMobileAttribute()
+    {
+        $attribute = "";
+        if ($this->mobile)
+            $attribute = $this->mobile;
+        return $attribute;
+    }
+
     public function getCreatedAttribute()
     {
         $attribute = "";
