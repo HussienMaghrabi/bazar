@@ -24,7 +24,6 @@ class Handler extends ExceptionHandler
 
     public function render($request, Exception $exception)
     {
-        if ($request->api_token or $request->fire_base_token) {
             if ($exception instanceOf ValidationException) {
                 $errors = $exception->errors();
                 foreach ($errors as $error) {
@@ -34,7 +33,7 @@ class Handler extends ExceptionHandler
                 $data['message'] = $exception->getMessage();
             $data['success'] = false;
             return response()->json($data, 200);
-        }
         return parent::render($request, $exception);
     }
+
 }

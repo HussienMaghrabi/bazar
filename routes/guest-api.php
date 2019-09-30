@@ -12,6 +12,7 @@ Route::post('/resend-password-code','ResetPassword\indexController@resend_passwo
 
 
 //terms
+Route::post('/social-media','SocialMedia\indexController@index');
 Route::post('/terms','Terms\indexController@index');
 Route::post('/about-us','About\indexController@index');
 Route::post('/contact-us','ContactUs\indexController@index');
