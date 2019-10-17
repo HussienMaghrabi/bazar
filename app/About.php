@@ -9,6 +9,9 @@ class About extends Model
     protected $fillable = [
         'name_en',
         'name_ar',
+        'facebook',
+        'instagram',
+        'twitter'
     ];
 
     public function toArray()

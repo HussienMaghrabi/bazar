@@ -17,6 +17,9 @@ class CreateAboutsTable extends Migration
             $table->bigIncrements('id');
             $table->longText('name_en')->nullable();
             $table->longText('name_ar')->nullable();
+            $table->longText('facebook')->nullable();
+            $table->longText('instagram')->nullable();
+            $table->longText('twitter')->nullable();
             $table->timestamps();
         });
     }
