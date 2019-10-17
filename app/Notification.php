@@ -13,8 +13,8 @@ class Notification extends Model
 
     public function getTime()
     {
-        $time = Notification::find($this->id)->created_at;
-        $time = $time->diffForHumans();
+        $tim = Notification::find($this->id)->created_at;
+        $time =  date("d M Y", strtotime($tim));
         return $time;
     }
 }
