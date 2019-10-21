@@ -50,6 +50,33 @@ class Category extends Model
             return $this->name_ar;
     }
 
+
+
+    public function getDashNameAttribute()
+    {
+        if (app()->getLocale() == "en")
+            return $this->name_en;
+        else
+            return $this->name_ar;
+    }
+
+
+    public function getDashImageAttribute()
+    {
+        $attribute = "";
+        if ($this->image)
+            $attribute = $this->image;
+        return $attribute;
+    }
+
+    public function getDashCreatedAttribute()
+    {
+        $attribute = "";
+        if ($this->created_at)
+            $attribute = $this->created_at->format('Y-m-d');
+        return $attribute;
+    }
+
     public function sub_categories()
     {
         return $this->hasMany(SubCategory::class, 'category_id');

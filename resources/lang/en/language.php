@@ -433,4 +433,9 @@ return [
     'enterQuestionOptions' => '# Enter Question Options ?',
 
 
+    'contact_uses' => 'contact us',
+    'sliders' => 'Slider',
+    'adv_sliders' => 'Adv Sliders',
+
+
 ];

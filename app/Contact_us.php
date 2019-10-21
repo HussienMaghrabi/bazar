@@ -54,5 +54,13 @@ class Contact_us extends Model
         return $attribute;
     }
 
+    public function getDashCreatedAttribute()
+    {
+        $attribute = "";
+        if ($this->created_at)
+            $attribute = $this->created_at->format('Y-m-d');
+        return $attribute;
+    }
+
 
 }

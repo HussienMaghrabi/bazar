@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'contact_uses' => 'تواصل معنا',
+    'sliders' => 'سلايدر',
+    'adv_sliders' => 'الاسلايدر الممول ',
     'done' => ' تم تنفيذ الامر بنجاح  ',
     'lang' => 'العربيه ',
     'categories' => 'الاقسام',

@@ -1958,6 +1958,7 @@ textarea
 ******************/
 textarea {
     resize: none;
+    resize: none;
     direction: rtl;
     resize: both;
 }
@@ -1990,7 +1991,7 @@ Form-control
 }
 
 form label {
-    font-weight: 400;
+    font-weight: 1000;
     text-transform: capitalize;
 }
 
@@ -10536,7 +10537,7 @@ File: scss
 /*Top bar
 *******************/
 .topbar {
-    background: rgb(3, 155, 229);
+    background: rgb(33, 37, 41);
     height: 45px;
 }
 
@@ -10558,7 +10559,7 @@ File: scss
 }
 
 .topbar .navbar-header {
-    background: #262f3d;
+    background: #212529;
 }
 
 .logo-center .topbar .navbar-header {
@@ -10610,7 +10611,7 @@ a.link:hover, a.link:focus {
 }
 
 .text-themecolor {
-    color: #009efb !important;
+    color: #212529  !important;
 }
 
 .profile-tab li a.nav-link.active,
@@ -10651,7 +10652,7 @@ a.link:hover, a.link:focus {
 /*sidebar navigation
 *******************/
 .card-no-border .left-sidebar, .card-no-border .sidebar-nav {
-    background: #262f3d;
+    background: #212529;
 }
 
 .mini-sidebar .sidebar-nav {

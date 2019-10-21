@@ -4,7 +4,7 @@
             <a class="navbar-brand" href="{{url("/admin")}}">
                 <span class="show hide ax" style="color: #FFF;">{{trans('web.m')}}</span>
                 </b>
-                <span class="hides" style="color: #FFF;">PM PRO</span>
+                <span class="hides" style="color: #FFF;">Syria Sale</span>
             </a>
         </div>
         <div class="navbar-collapse">
