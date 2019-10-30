@@ -11,6 +11,10 @@
 
 
     Route::resource('/sliders','Slider\IndexController');
+    Route::resource('/sliders1','Slider1\IndexController');
+    Route::resource('/sliders2','Slider2\IndexController');
+    Route::resource('/sliders3','Slider3\IndexController');
+    Route::resource('/sliders4','Slider4\IndexController');
     Route::resource('/adv_sliders','AdvSlider\IndexController');
 
 

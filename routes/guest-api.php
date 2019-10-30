@@ -28,5 +28,9 @@ Route::post('/City_advertisements','Advertisement\IndexController@City_advertise
 Route::post('/single_advertisement','Advertisement\IndexController@single_advertisement');
 
 
+// Home
+Route::post('/homePage','Home\IndexController@index');
+
+
 
 
