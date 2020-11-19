@@ -38,5 +38,38 @@ class Controller extends BaseController
         $downstreamResponse->tokensToRetry();
         $downstreamResponse->tokensWithError();
     }
+    
+     # -------------------------------------------------
+    protected function storeImage($file)
+    {
+        $path = $file->store('public/images');
+        $url = url('/');
+        $url = str_replace('public', '', $url);
+        $serverPath = $url . '/storage/app/';
+        $path = $serverPath . $path;
+        return $path;
+    }
+
+   # -------------------------------------------------
+    protected function store_Image($file)
+    {
+        $path = $file->store('public/images');
+        $url = url('/');
+        $url = str_replace('public', '', $url);
+        $serverPath =  'app/';
+        $path = $serverPath . $path;
+        return $path;
+    }
+
+    #------------------ lang ----------------
+    public function lang()
+    {
+        App::setLocale(request()->header('lang'));
+        if (request()->header('lang'))
+        {
+            return request()->header('lang');
+        }
+        return 'ar';
+    }
 
 }

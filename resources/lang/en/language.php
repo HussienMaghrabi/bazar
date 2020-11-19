@@ -7,7 +7,14 @@ return [
     'lang' => 'English ',
     'about_us' => 'About Us',
     'app_social_links' => 'App Social Links',
+    "Sort"=> "Sort",
     'categories' => 'Categories',
+    'subcategories' => 'SubCategories',
+    'sub2categories' => 'SubCategories 2',
+    'sub3categories' => 'SubCategories 3',
+    'sub4categories' => 'SubCategories 4',
+    'Advertisements' => '  Advertisements',
+    'advertisements' => '  Advertisements',
     'celebraties' => 'Celebraties',
     'companies' => 'Companies',
     'company_stories' => 'Company Stories',
@@ -26,6 +33,7 @@ return [
     'add' => 'Add',
     'save' => 'Add',
     'id' => 'ID',
+    "DeleteItem" => 'Deleted successfully',
     'delete' => 'Delete',
     'delete_title' => 'Warning',
     'delete_message' => 'Are u sure u want to Delete This Item',
@@ -260,7 +268,6 @@ return [
     'notallowed' => 'You are not allowed to Access Dashboard .',
 
     'yes' => 'YES!',
-    'Go_Homepage' => 'Go TO Homepage',
     'verified_emil' => 'Congratulation Your Email has been Verified .',
 
     'points' => "Points",
@@ -276,8 +283,7 @@ return [
     // Mapsut
     'first_name' => 'First name',
     'last_name' => 'Last name ',
-    'active_Tech' => 'This use has been actived ',
-    'Not_active_Tech' => 'This user has been deActived ',
+
 
     'X' => 'dimintions_X ',
     'Y' => 'dimintions_Y ',
@@ -435,6 +441,10 @@ return [
 
     'contact_uses' => 'contact us',
     'sliders' => 'Slider',
+    'sliders1' => 'Slider 1',
+    'sliders2' => 'Slider 2',
+    'sliders3' => 'Slider 3',
+    'sliders4' => 'Slider 4',
     'adv_sliders' => 'Adv Sliders',
 
 

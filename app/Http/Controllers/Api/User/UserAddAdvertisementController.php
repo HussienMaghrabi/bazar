@@ -15,14 +15,19 @@ class UserAddAdvertisementController extends Controller
     public function index(Request $request)
     {
         $data = $request->validate([
-            'image' => '',
+            'images[]'            => '',
             'title' => 'required',
+            'mobile' => 'required',
             'category_id' => 'required',
             'sub_category_id' => '',
+            'sub2_category_id' => '',
+            'sub3_category_id' => '',
+            'sub4_category_id' => '',
             'description' => 'required',
             'price' => 'required',
             'country_id' => 'required',
-            'city_id' => 'required',
+           'city_id' => 'required',
+           
         ]);
 
         $data['user_id'] = $request->user()->id;
@@ -35,9 +40,9 @@ class UserAddAdvertisementController extends Controller
     {
 
         $info["adv_id"] = $adv->id;
-        if($request->image)
+        if($request->images)
         {
-            foreach($request->image as $image)
+            foreach($request->images as $image)
             {
                 $info["image"] = $this->storeImage($image);
                 Advertisement_images::create($info);

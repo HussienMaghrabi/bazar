@@ -1,12 +1,11 @@
 @extends('admin.layout.table.index')
-@section('page-title',"Data")
+@section('page-title',"subcategoryimage")
 @section('buttons')
 
 @stop
 @section('thead')
     <th>#</th>
-    <th>{{trans('language.image')}}</th>
-    <th>{{trans('language.name')}}</th>
+    <th>{{__('language.image')}}</th>
     <th>{{trans('language.created_at')}}</th>
     <th>{{trans('language.settings')}}</th>
 @endsection
@@ -15,11 +14,10 @@
         <tr>
             <td>{{ $loop->iteration }}</td>
             <td> @includeIf("admin.components.image.index" , ["url" => $item->dash_image])</td>
-            <td>{{$item->dash_name}}</td>
             <td>{{$item->dash_created}}</td>
             <td>
-                @includeIf("admin.components.buttons.edit" , ["href" => "ittos/$item->id/edit"])
-                @includeIf("admin.components.buttons.delete",["message" => "($item->dash_name)"  ,  "action" => url("admin/ittos/$item->id")])
+                @includeIf("admin.components.buttons.edit" , ["href" => "subcategoryimage/$item->id/edit"])
+                @includeIf("admin.components.buttons.delete",["message" => "($item->dash_name)"  ,  "action" => url("admin/subcategoryimage/$item->id")])
             </td>
         </tr>
     @endforeach

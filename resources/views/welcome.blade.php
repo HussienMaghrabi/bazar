@@ -80,7 +80,7 @@
 
     <div class="content">
         <div class="title m-b-md">
-           Syria Sale
+            <img style="width: 100% ; height: 100%;" src="{{asset("assets\admin\images\site.jpeg")}}">
         </div>
         <div class="col-md-12">
             @if (\Session::has('success'))

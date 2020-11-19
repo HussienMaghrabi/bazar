@@ -52,6 +52,67 @@
                 </li>
 
                 <li>
+                    @includeIf("admin.layout.aside.main-item" ,["href" => "subcategories" , "title" => trans('language.subcategories') , "description" => trans('language.list')])
+                    <ul aria-expanded="true" class="collapse">
+                        <li>
+                            @includeIf("admin.layout.aside.sub-item" ,["href" => "subcategories" , "title" => trans('language.list') , "tooltip" => trans('language.list') , "class" => "mdi mdi-view-list"])
+                        </li>
+                        <li>
+                            @includeIf("admin.layout.aside.sub-item" ,["href" => "subcategories/create" , "title" => trans('language.add') , "tooltip" => trans('language.add'), "class" => "mdi mdi-plus"])
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    @includeIf("admin.layout.aside.main-item" ,["href" => "sub2categories" , "title" => trans('language.sub2categories') , "description" => trans('language.list')])
+                    <ul aria-expanded="true" class="collapse">
+                        <li>
+                            @includeIf("admin.layout.aside.sub-item" ,["href" => "sub2categories" , "title" => trans('language.list') , "tooltip" => trans('language.list') , "class" => "mdi mdi-view-list"])
+                        </li>
+                        <li>
+                            @includeIf("admin.layout.aside.sub-item" ,["href" => "sub2categories/create" , "title" => trans('language.add') , "tooltip" => trans('language.add'), "class" => "mdi mdi-plus"])
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    @includeIf("admin.layout.aside.main-item" ,["href" => "sub3categories" , "title" => trans('language.sub3categories') , "description" => trans('language.list')])
+                    <ul aria-expanded="true" class="collapse">
+                        <li>
+                            @includeIf("admin.layout.aside.sub-item" ,["href" => "sub3categories" , "title" => trans('language.list') , "tooltip" => trans('language.list') , "class" => "mdi mdi-view-list"])
+                        </li>
+                        <li>
+                            @includeIf("admin.layout.aside.sub-item" ,["href" => "sub3categories/create" , "title" => trans('language.add') , "tooltip" => trans('language.add'), "class" => "mdi mdi-plus"])
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    @includeIf("admin.layout.aside.main-item" ,["href" => "sub4categories" , "title" => trans('language.sub4categories') , "description" => trans('language.list')])
+                    <ul aria-expanded="true" class="collapse">
+                        <li>
+                            @includeIf("admin.layout.aside.sub-item" ,["href" => "sub4categories" , "title" => trans('language.list') , "tooltip" => trans('language.list') , "class" => "mdi mdi-view-list"])
+                        </li>
+                        <li>
+                            @includeIf("admin.layout.aside.sub-item" ,["href" => "sub4categories/create" , "title" => trans('language.add') , "tooltip" => trans('language.add'), "class" => "mdi mdi-plus"])
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    @includeIf("admin.layout.aside.main-item" ,["href" => "advertisements" , "title" => trans('language.advertisements') , "description" => trans('language.list')])
+                    <ul aria-expanded="true" class="collapse">
+                        <li>
+                            @includeIf("admin.layout.aside.sub-item" ,["href" => "advertisements" , "title" => trans('language.list') , "tooltip" => trans('language.list') , "class" => "mdi mdi-view-list"])
+                        </li>
+                        <li>
+                            @includeIf("admin.layout.aside.sub-item" ,["href" => "advertisements/create" , "title" => trans('language.add') , "tooltip" => trans('language.add'), "class" => "mdi mdi-plus"])
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
                     @includeIf("admin.layout.aside.main-item" ,["href" => "sliders" , "title" => trans('language.sliders') , "description" => trans('language.list')])
                     <ul aria-expanded="true" class="collapse">
                         <li>
@@ -62,6 +123,56 @@
                         </li>
                     </ul>
                 </li>
+                
+                
+                <li>
+                    @includeIf("admin.layout.aside.main-item" ,["href" => "sliders1" , "title" => trans('language.sliders1') , "description" => trans('language.list')])
+                    <ul aria-expanded="true" class="collapse">
+                        <li>
+                            @includeIf("admin.layout.aside.sub-item" ,["href" => "sliders1" , "title" => trans('language.list') , "tooltip" => trans('language.list') , "class" => "mdi mdi-view-list"])
+                        </li>
+                        <li>
+                            @includeIf("admin.layout.aside.sub-item" ,["href" => "sliders1/create" , "title" => trans('language.add') , "tooltip" => trans('language.add'), "class" => "mdi mdi-plus"])
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    @includeIf("admin.layout.aside.main-item" ,["href" => "sliders2" , "title" => trans('language.sliders2') , "description" => trans('language.list')])
+                    <ul aria-expanded="true" class="collapse">
+                        <li>
+                            @includeIf("admin.layout.aside.sub-item" ,["href" => "sliders2" , "title" => trans('language.list') , "tooltip" => trans('language.list') , "class" => "mdi mdi-view-list"])
+                        </li>
+                        <li>
+                            @includeIf("admin.layout.aside.sub-item" ,["href" => "sliders2/create" , "title" => trans('language.add') , "tooltip" => trans('language.add'), "class" => "mdi mdi-plus"])
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    @includeIf("admin.layout.aside.main-item" ,["href" => "sliders3" , "title" => trans('language.sliders3') , "description" => trans('language.list')])
+                    <ul aria-expanded="true" class="collapse">
+                        <li>
+                            @includeIf("admin.layout.aside.sub-item" ,["href" => "sliders3" , "title" => trans('language.list') , "tooltip" => trans('language.list') , "class" => "mdi mdi-view-list"])
+                        </li>
+                        <li>
+                            @includeIf("admin.layout.aside.sub-item" ,["href" => "sliders3/create" , "title" => trans('language.add') , "tooltip" => trans('language.add'), "class" => "mdi mdi-plus"])
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    @includeIf("admin.layout.aside.main-item" ,["href" => "sliders4" , "title" => trans('language.sliders4') , "description" => trans('language.list')])
+                    <ul aria-expanded="true" class="collapse">
+                        <li>
+                            @includeIf("admin.layout.aside.sub-item" ,["href" => "sliders4" , "title" => trans('language.list') , "tooltip" => trans('language.list') , "class" => "mdi mdi-view-list"])
+                        </li>
+                        <li>
+                            @includeIf("admin.layout.aside.sub-item" ,["href" => "sliders4/create" , "title" => trans('language.add') , "tooltip" => trans('language.add'), "class" => "mdi mdi-plus"])
+                        </li>
+                    </ul>
+                </li>
+                
                 <li>
                     @includeIf("admin.layout.aside.main-item" ,["href" => "adv_sliders" , "title" => trans('language.adv_sliders') , "description" => trans('language.list')])
                     <ul aria-expanded="true" class="collapse">

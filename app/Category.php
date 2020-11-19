@@ -7,19 +7,28 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $fillable = [
-        'name_ar',
-        'name_en',
-        'image',
-    ];
-
-    public function toArray()
+    protected $guarded = [];
+    
+    
+     public function toArray()
     {
         $data['id'] = $this->id;
         $data['name'] = $this->serv_name;
         $data['image'] = $this->serv_image;
         $data['has_subcategory'] = $this->serv_has_subcategory;
+        $data['next'] = $this->serv_next;
         return $data;
+    }
+
+    public function getServNextAttribute()
+    {
+        $attribute = "";
+        if ($this->serv_has_subcategory == true)  {
+            $attribute =  1;
+        } else {
+            $attribute = 0;
+        }
+        return $attribute;
     }
 
 
@@ -50,8 +59,6 @@ class Category extends Model
             return $this->name_ar;
     }
 
-
-
     public function getDashNameAttribute()
     {
         if (app()->getLocale() == "en")
@@ -59,7 +66,6 @@ class Category extends Model
         else
             return $this->name_ar;
     }
-
 
     public function getDashImageAttribute()
     {
@@ -79,6 +85,6 @@ class Category extends Model
 
     public function sub_categories()
     {
-        return $this->hasMany(SubCategory::class, 'category_id');
+        return $this->hasMany('App\SubCategory');
     }
 }

@@ -38,7 +38,7 @@
                 <br>
                 <br>
                 <br>
-                <img style="width: 40%;" src="{{url('assets\admin\images\logo.png')}}"
+                <img style="width: 40%;" src="{{url('assets/admin/images/logo.png')}}"
                      alt="Logo"/>
                 <br>
                 <form class="form-horizontal form-material" id="loginform" method="POST"

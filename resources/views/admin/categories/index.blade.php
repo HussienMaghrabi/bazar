@@ -7,6 +7,7 @@
     <th>#</th>
     <th>{{trans('language.image')}}</th>
     <th>{{trans('language.name')}}</th>
+    <th>{{trans('language.Sort')}}</th>
     <th>{{trans('language.created_at')}}</th>
     <th>{{trans('language.settings')}}</th>
 @endsection
@@ -16,6 +17,7 @@
             <td>{{ $loop->iteration }}</td>
             <td> @includeIf("admin.components.image.index" , ["url" => $item->dash_image])</td>
             <td>{{$item->dash_name}}</td>
+            <td>{{$item->sort}}</td>
             <td>{{$item->dash_created}}</td>
             <td>
                 @includeIf("admin.components.buttons.edit" , ["href" => "categories/$item->id/edit"])

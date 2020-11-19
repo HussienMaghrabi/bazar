@@ -9,11 +9,20 @@ use App\Http\Controllers\Controller;
 
 class IndexController extends Controller
 {
+    private $resources = 'categories';
+    private $resource = [
+        'route' => 'categories',
+        'view' => "categories",
+        'title' => "categories",
+        'action' => "",
+        'header' => "categories"
+    ];
     use storeImage;
     public function index()
     {
-        $items = Category::orderBy('id', 'desc')->paginate(10);
-        return view('admin.categories.index', compact('items'));
+        $items = Category::orderBy('sort', 'DESC')->paginate(10);
+        $resource = $this->resource;
+        return view('admin.categories.index', compact('items', 'resource'));
     }
 
     /**
@@ -23,7 +32,9 @@ class IndexController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.create');
+        $resource = $this->resource;
+        $resource['action'] = 'Create';
+        return view('admin.'.$this->resources.'.create',compact( 'resource'));
     }
 
     /**
@@ -41,6 +52,11 @@ class IndexController extends Controller
         ]);
         if ($request->image) {
             $data['image'] = $this->storeImage($data['image']);
+        }
+        if ($request->sort <= '9') {
+        $data['sort'] = "0".$request->sort;
+        }else{
+         $data['sort'] = $request->sort;
         }
         Category::create($data);
         session()->flash('success', trans('admin.done'));
@@ -66,8 +82,10 @@ class IndexController extends Controller
      */
     public function edit($id)
     {
+        $resource = $this->resource;
+        $resource['action'] = 'Edit';
         $item = Category::findOrFail($id);
-        return view('admin.categories.edit', compact('item'));
+        return view('admin.categories.edit', compact('item', 'resource'));
     }
 
     /**
@@ -84,6 +102,7 @@ class IndexController extends Controller
         $data = $request->validate([
             'name_ar' => '',
             'name_en' => '',
+            'sort' => '',
             'image' => 'mimes:jpeg,jpg,png,gif|max:2048',
         ]);
         if ($request->image) {

@@ -8,11 +8,7 @@ class City extends Model
 {
     public $timestamps = false;
 
-    protected $fillable = [
-        'name_en',
-        'name_ar',
-        'country_id',
-    ];
+    protected $guarded = [];
 
     public function toArray()
     {
@@ -55,6 +51,7 @@ class City extends Model
 
     public function country()
     {
-        return $this->belongsTo(Country::class);
+        return $this->belongsTo('App\Country');
     }
+
 }

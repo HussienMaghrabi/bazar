@@ -13,7 +13,7 @@ class IndexController extends Controller
     public function index(Request $request)
     {
 
-        $items = Category::get();
+        $items = Category::orderBy('sort', 'DESC')->get();
         return $this->apiResponse($request,trans('language.message') ,$items,true);
     }
 }

@@ -6,25 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class  Advertisement extends Model
 {
-    protected $fillable = [
-        'user_id',
-        'title',
-        'price',
-        'category_id',
-        'subCategory_id',
-        'description',
-        'country_id',
-        'city_id',
-    ];
+    protected $guarded = [];
 
     public function toArray()
     {
         $data['id'] = $this->id;
+        $data['user_name'] = $this->serv_user_name;
+        $data['user_image'] = $this->serv_user_image;
         $data['title'] = $this->serv_title;
         $data['price'] = $this->serv_price;
+        $data['mobile'] = $this->mobile;
+        $data['category_name'] = $this->serv_category_name;
+        $data['description'] = $this->serv_description;
         $data['post_on'] = $this->serv_post_on;
         $data['is_favourite'] = $this->getServIsFavouriteAttribute();
-        $data['images'] = $this->serv_one_image;
+        $data['images'] = $this->serv_images;
         return $data;
     }
 
@@ -36,6 +32,7 @@ class  Advertisement extends Model
         $data['user_image'] = $this->serv_user_image;
         $data['title'] = $this->serv_title;
         $data['price'] = $this->serv_price;
+        $data['mobile'] = $this->serv_mobile;
         $data['category_name'] = $this->serv_category_name;
         $data['description'] = $this->serv_description;
         $data['post_on'] = $this->serv_post_on;
@@ -68,6 +65,15 @@ class  Advertisement extends Model
         $attribute = "";
         if ($this->created_at)
             $attribute = strtotime($this->created_at) * 1000;
+        return $attribute;
+    }
+    
+     public function getServMobileAttribute()
+    {
+        $attribute = "";
+        $code = "+965" ;
+        if ($this->mobile)
+            $attribute = $code.$this->mobile;
         return $attribute;
     }
 
@@ -160,14 +166,72 @@ class  Advertisement extends Model
         return $attribute;
     }
 
+    //Dashboard
+    public function getDashNameAttribute()
+    {
+        $attribute = "";
+        if ($this->title)
+            $attribute = $this->title;
+        return $attribute;
+    }
+
+    public function getDashPriceAttribute()
+    {
+        $attribute = "";
+        if ($this->price)
+            $attribute = $this->price;
+        return $attribute;
+    }
+
+
+    public function getDashDescriptionAttribute()
+    {
+        $attribute = "";
+        if ($this->description)
+            $attribute = $this->description;
+        return $attribute;
+    }
+
+    public function getDashCategoryNameAttribute()
+    {
+        $attribute = "";
+        if ($this->category)
+            $attribute = $this->category->dash_name;
+        return $attribute;
+    }
+
+    public function getDashCountryNameAttribute()
+    {
+        $attribute = "";
+        if ($this->Country)
+            $attribute = $this->Country->dash_name;
+        return $attribute;
+    }
+
+    public function getDashCityNameAttribute()
+    {
+        $attribute = "";
+        if ($this->city)
+            $attribute = $this->city->dash_name;
+        return $attribute;
+    }
+
+    public function getDashCreatedAttribute()
+    {
+        $attribute = "";
+        if ($this->created_at)
+            $attribute = $this->created_at->format('Y-m-d');
+        return $attribute;
+    }
+
     public function country()
     {
-        return $this->belongsTo(Country::class, 'country_id');
+        return $this->belongsTo('App\Country');
     }
 
     public function city()
     {
-        return $this->belongsTo(City::class, 'city_id');
+        return $this->belongsTo('App\City');
     }
 
     public function user()
@@ -175,13 +239,27 @@ class  Advertisement extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function category()
-    {
-        return $this->belongsTo(Category::class, 'category_id');
-    }
+
 
     public function Advertisement_images()
     {
         return $this->hasMany(Advertisement_images::class, 'adv_id');
+    }
+
+
+    public function category(){
+        return $this->belongsTo('App\Category');
+    }
+    public function sub_category(){
+        return $this->belongsTo('App\SubCategory');
+    }
+    public function sub2_category(){
+        return $this->belongsTo('App\Sub2Category');
+    }
+    public function sub3_category(){
+        return $this->belongsTo('App\Sub3Category');
+    }
+    public function sub4_category(){
+        return $this->belongsTo('App\Sub4Category');
     }
 }

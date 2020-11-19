@@ -10,14 +10,14 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('assets/site/js/app.js') }}" defer></script>
+    <script src="{{ asset('storage/assets/site/js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('assets/site/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('storage/assets/site/css/app.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">

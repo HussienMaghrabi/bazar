@@ -17,18 +17,25 @@ class IndexController extends Controller
         $request->validate([
             'category_id' => 'required',
             'country_id' => 'required',
-            'subCategory_id' => '',
+            'from' => '',
         ]);
 
-            if ($request->subCategory_id != null) {
-                $items = Advertisement::where('country_id', $request->country_id)
-                    ->where('subCategory_id', $request->subCategory_id)->get();
-            } else {
-                $items = Advertisement::where('country_id', $request->country_id)
-                    ->where('category_id', $request->category_id)->get();
-            }
 
-        return $this->apiResponse($request, trans('language.message'), $items, true);
+        if($request->from == 1){
+            $items = Advertisement::orderBy('sort', 'DESC')->where('country_id', $request->country_id)->where('sub_category_id',$request->category_id)->get();
+            return $this->apiResponse($request,__('language.message') ,$items,true);
+        }elseif ($request->from == 2){
+            $items = Advertisement::orderBy('sort', 'DESC')->where('country_id', $request->country_id)->where('sub2_category_id',$request->category_id)->get();
+            return $this->apiResponse($request,__('language.message') ,$items,true);
+        }elseif ($request->from == 3){
+            $items = Advertisement::orderBy('sort', 'DESC')->where('country_id', $request->country_id)->where('sub3_category_id',$request->category_id)->get();
+            return $this->apiResponse($request,__('language.message') ,$items,true);
+        }elseif ($request->from == 4 ){
+            $items = Advertisement::orderBy('sort', 'DESC')->where('country_id', $request->country_id)->where('sub4_category_id',$request->category_id)->get();
+            return $this->apiResponse($request,__('language.message') ,$items,true);
+        }else{
+            return $this->apiResponse(null,__('language.message') ,null,false);
+        }
     }
 
     public function City_advertisements(Request $request)
@@ -36,18 +43,24 @@ class IndexController extends Controller
         $request->validate([
             'category_id' => 'required',
             'city_id' => 'required',
-            'subCategory_id' => '',
+            'from' => '',
         ]);
 
-        if ($request->subCategory_id != null) {
-            $items = Advertisement::where('city_id', $request->city_id)
-                ->where('subCategory_id', $request->subCategory_id)->get();
-        } else {
-            $items = Advertisement::where('city_id', $request->city_id)
-                ->where('category_id', $request->category_id)->get();
+       if($request->from == 1){
+            $items = Advertisement::orderBy('sort', 'DESC')->where('city_id', $request->city_id)->where('sub_category_id',$request->category_id)->get();
+            return $this->apiResponse($request,__('language.message') ,$items,true);
+        }elseif ($request->from == 2){
+            $items = Advertisement::orderBy('sort', 'DESC')->where('city_id', $request->city_id)->where('sub2_category_id',$request->category_id)->get();
+            return $this->apiResponse($request,__('language.message') ,$items,true);
+        }elseif ($request->from == 3){
+            $items = Advertisement::orderBy('sort', 'DESC')->where('city_id', $request->city_id)->where('sub3_category_id',$request->category_id)->get();
+            return $this->apiResponse($request,__('language.message') ,$items,true);
+        }elseif ($request->from == 4 ){
+            $items = Advertisement::orderBy('sort', 'DESC')->where('city_id', $request->city_id)->where('sub4_category_id',$request->category_id)->get();
+            return $this->apiResponse($request,__('language.message') ,$items,true);
+        }else{
+            return $this->apiResponse(null,__('language.message') ,null,false);
         }
-
-        return $this->apiResponse($request, trans('language.message'), $items, true);
     }
 
     public function single_advertisement(Request $request)

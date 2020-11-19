@@ -1,12 +1,26 @@
+@php
+    $headers = [
+            $resource['header'] => $resource['route'].'.index',
+            $resource['action'] => '#',
+        ];
+@endphp
 @extends('admin.layout.forms.add.index')
 @section('action' , "categories")
-@section('title' , trans('language.add'))
-@section('page-title',trans('language.categories'))
+@section('title' , __('language.'.$resource['title']))
+@section('page-title',__('language.'.$resource['title']))
 @section('form-groups')
 
-    @includeIf('admin.components.form.add.file', ['icon' => 'fa fa-check','label' => trans('language.image'),'name'=>'image', 'max'=>'2'])
-    @includeIf('admin.components.form.add.text', ['icon' => 'fa fa-user','label' => trans('language.name_ar'),'name'=>'name_ar', 'placeholder'=>trans('language.name_ar')])
-    @includeIf('admin.components.form.add.text', ['icon' => 'fa fa-user','label' => trans('language.name_en'),'name'=>'name_en', 'placeholder'=>trans('language.name_en')])
+
+
+
+    {{ Form::open(array('route'=>[$resource['route']. '.store', App::getLocale()],'files'=>true, 'class' => 'form-horizontal')) }}
+
+    @include('admin.' .$resource['view']. '.form')
+
+
+
 
 @endsection
-@section('submit-button-title' , trans('language.add'))
+@section('submit-button-title' , __('language.add'))
+{!!Form::close()!!}
+
