@@ -1,11 +1,12 @@
 <?php
 
-Route::get('/', function (){
-    return view('welcome');
-});
+
 Route::get('/admin', 'Admin\Auth\LoginController@index');
 Route::post('/adminlogin', 'Admin\Auth\LoginController@adminlogin');
 Route::post('/adminlogout', 'Admin\Auth\LoginController@adminlogout');
+
+
+
 
 
 Route::get('/clear', function() {
@@ -15,3 +16,34 @@ Route::get('/clear', function() {
 });
 
 Auth::routes();
+
+
+// WebSite
+
+// Auth System
+Route::get('/login', 'Site\Auth\LoginController@index');
+Route::post('/loginAction', 'Site\Auth\LoginController@loginAction');
+Route::get('/registerAction', 'Site\Auth\RegisterController@index');
+Route::post('/register', 'Site\Auth\RegisterController@register');
+
+
+
+Route::get('/', 'Site\Home\IndexController@index');
+Route::get('/category', 'Site\Engines\IndexController@index');
+Route::get('/sub_categories/{id}', 'Site\Category\IndexController@index');
+Route::get('/sub_sub_categories/{id}', 'Site\Category\IndexController@sub2categories');
+Route::get('/sub3categories/{id}', 'Site\Category\IndexController@sub3categories');
+Route::get('/sub4categories/{id}', 'Site\Category\IndexController@sub4categories');
+Route::get('/items/{id}', 'Site\Item\IndexController@index');
+Route::get('/itemProduct/{id}', 'Site\Item\IndexController@details');
+
+Route::get('/mazadItems', 'Site\Mazad\IndexController@index');
+
+
+Route::get('/addProduct', 'Site\Home\IndexController@addProduct');
+Route::get('/ProductDetails/{id}', 'Site\Home\IndexController@ProductDetails');
+
+
+/// Will Move To site.php
+Route::get('/profile', 'Site\Profile\IndexController@index');
+Route::get('/user_products', 'Site\Product\IndexController@index');
