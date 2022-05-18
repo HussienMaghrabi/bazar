@@ -15,7 +15,16 @@
 
     class IndexController extends Controller
     {
-        public function index($id)
+
+        public function index(Request $request)
+        {
+            $items = Category::orderBy('id', 'desc')->get();
+            $sliders = Slider::inRandomOrder()->take(5)->get();
+            $subcategory = App\SubCategory::where('id',$items->id)->count();
+            return view("site.views.category.index",compact("items" ,"sliders",'subcategory'));
+        }
+
+        public function subcategories($id)
         {
             $items = SubCategory::where("category_id", $id)->get();
             $sliders = Slider::inRandomOrder()->take(5)->get();
